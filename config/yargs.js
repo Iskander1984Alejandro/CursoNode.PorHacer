@@ -15,7 +15,10 @@ const opcComandoCrear = {
 };
 
 const opcComandoListar = {
-
+    completado: {
+        alias: 'c',
+        desc: 'Estado de las tareas a filtrar'
+    }
 };
 
 const opcComandoAct = {

@@ -7,8 +7,8 @@ let colors = require('colors');
 
 
 
-const listarTareas = () => {
-    let listado = porHacer.getListado();
+const listarTareas = (completado) => {
+    let listado = porHacer.getListado(completado);
     console.log('==========Por hacer======='.green);
     for (let tarea of listado) {
         console.log(`Descripción: ${tarea.descripcion}`);
@@ -27,7 +27,7 @@ switch (comando) {
         break;
     case 'listar':
         console.log('Listar tareas por hacer');
-        listarTareas();
+        listarTareas(argv.completado);
         break;
     case 'actualizar':
         console.log('Actualizar tarea');

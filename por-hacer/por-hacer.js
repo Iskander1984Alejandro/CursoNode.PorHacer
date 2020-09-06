@@ -35,9 +35,15 @@ const crear = (descripcion) => {
 
 }
 
-const getListado = () => {
+const getListado = (completado) => {
     cargarDB();
-    return listadoPorHacer;
+    if (!completado) {
+        return listadoPorHacer;
+    } else {
+        completado = JSON.parse(completado);
+        return listadoPorHacer.filter(tarea => tarea.completado === completado);
+
+    }
 }
 
 const actualizar = (descripcion, completado = true) => {
